@@ -23,6 +23,8 @@
 //     console.log(a);
 // }
 
+console.log(`=============================== Segitiga Mine ================================`);
+
 
 let angkaSegitiga = 1
 let loopSegitiga = 15
@@ -82,6 +84,9 @@ for (let i = 0 ; i < loopSegitiga ; i++){
 //     }
 
 
+console.log(`=============================== Segitiga Bng Jordan ================================`);
+
+
 let n = 99;
 let tempN = n;
 let digit = '';
@@ -120,3 +125,47 @@ for (let i = 1; i <= h; i++) {
 }
 
 console.log(result);
+
+
+console.log(`=============================== Currency ================================`);
+
+let number = 12345
+let currency = ""
+for (let i = 0; i < number.toString().length; i++) {
+
+    if (number.toString().length % 3 == 2) {
+        if (i > 1 && ((number.toString().length - i) % 3 == 0)) currency += "."
+    } 
+    else if (i > 0 && (( number.toString().length - i) % 3) == 0) currency += "."
+    currency += number.toString ().charAt(i) 
+
+}
+console.log(`Rp ${currency},00`);
+
+console.log(`=============================== Segitiga Siku Terbalik ================================`);
+
+let angka1 = 1
+let h1 = 8
+let angkamax1 = 28
+
+for (let i1 = 1; i1 <= h1; i1++) {
+    let a1 = '';
+     
+    for (let j1 = h1; j1 > i1; j1--) {
+     if (angka1 >= angkamax1 + 1){
+    break
+    }     
+        if (angka1.toString().length < angkamax1.toString().length) {
+            a1 += `0`;
+        } else {
+            a1 += ``
+        }
+    a1 += angka1 + ` `;
+    angka1++      
+  
+    }
+    //  a1 += '\n';
+    console.log(a1);
+
+}
+console.log(`=============================== End ================================`);

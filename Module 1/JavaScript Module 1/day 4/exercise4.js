@@ -1,9 +1,6 @@
 console.log(`======================= No 1 =============================`)
 
-let angka = 1
-let h = 8
-let angkamax = 19
-
+function segitigaSiku(angka,h,angkamax) {
 for (let i = 1; i <= h; i++) {
     let a = '';
      
@@ -23,12 +20,13 @@ for (let i = 1; i <= h; i++) {
     //  a += '\n';
     console.log(a);
 }
-
+}
+segitigaSiku(1,6,18)
 
 console.log(`======================= No 2 =============================`)
 
-let totalLooping = 30
-for (let num = 1; num <= totalLooping; num++) {
+function FizzBuzz(n){
+for (let num = 1; num <= n; num++) {
     if (num % 15 === 0) {
         console.log(`FizzBuzz`);
     } else if (num % 3 === 0) {
@@ -39,6 +37,43 @@ for (let num = 1; num <= totalLooping; num++) {
         console.log(`${num}`);
     }
 }
+}
+FizzBuzz(30)
 
 console.log(`======================= No 3 =============================`)
 
+function BMI (w,h) {
+ let bmi = (w / (h*h))
+ if (bmi < 18.5) {return `BMI kamu adalah ${bmi}, maka kamu Less Weight`}
+ else if (18.5 < bmi < 24.9) {return `BMI kamu adalah ${bmi}, maka kamu Ideal`}
+ else if (25.0 < bmi < 29.9) {return `BMI kamu adalah ${bmi}, maka kamu Overweight`}
+ else if (30.0 < bmi < 39.9) {return `BMI kamu adalah ${bmi}, maka kamu Very Overweight`}
+ else if (bmi > 39.9) {return ` BMI kamu adalah ${bmi}, maka kamu Obesity`}
+}
+console.log(BMI (75,1.74));
+
+console.log(`======================= No 4 =============================`)
+let arrNumber = []
+let arrGanjil = []
+let arrGenap = []
+
+function loopNumber(start,end) {
+for (i = start; i <= end; i++){
+    if (i % i == 0){arrNumber.push(i)}
+    if (i % 2 == 0){arrGenap.push(i)}
+    if (i % 2 !== 0){arrGanjil.push(i)}
+}
+console.log(arrNumber);
+console.log(arrGenap);
+// console.log(arrGanjil);
+}
+
+loopNumber(1,10)
+
+console.log(`======================= No 5 =============================`)
+
+function strTOarr(Value){
+let arr = Value.split(' ')
+return arr
+}
+console.log(strTOarr(`Hello World`));

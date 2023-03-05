@@ -53,3 +53,28 @@ for (let i = 1; i <= h; i++) {
     console.log(a);
 }
 
+console.log(`================================ Segitiga Siku Terbalik =================================`);
+
+let angka1 = 1
+let h1 = 8
+let angkamax1 = 28
+
+for (let i1 = 1; i1 <= h1; i1++) {
+    let a1 = '';
+     
+    for (let j1 = h1; j1 > i1; j1--) {
+     if (angka1 >= angkamax1 + 1){
+    break
+    }     
+        if (angka1.toString().length < angkamax1.toString().length) {
+            a1 += `0`;
+        } else {
+            a1 += ``
+        }
+    a1 += angka1 + ` `;
+    angka1++      
+  
+    }
+    //  a1 += '\n';
+    console.log(a1);
+}
