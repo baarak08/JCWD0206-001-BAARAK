@@ -1,6 +1,7 @@
 console.log(`======================= No 1 =============================`)
 
-function segitigaSiku(angka,h,angkamax) {
+function segitigaSiku(h,angkamax) {
+let angka = 1
 for (let i = 1; i <= h; i++) {
     let a = '';
      
@@ -21,7 +22,7 @@ for (let i = 1; i <= h; i++) {
     console.log(a);
 }
 }
-segitigaSiku(1,6,18)
+segitigaSiku(6,18)
 
 console.log(`======================= No 2 =============================`)
 
@@ -50,7 +51,7 @@ function BMI (w,h) {
  else if (30.0 < bmi < 39.9) {return `BMI kamu adalah ${bmi}, maka kamu Very Overweight`}
  else if (bmi > 39.9) {return ` BMI kamu adalah ${bmi}, maka kamu Obesity`}
 }
-console.log(BMI (75,1.74));
+console.log(BMI (60,1.7));
 
 console.log(`======================= No 4 =============================`)
 let arrNumber = []
@@ -67,7 +68,6 @@ console.log(arrNumber);
 console.log(arrGenap);
 // console.log(arrGanjil);
 }
-
 loopNumber(1,10)
 
 console.log(`======================= No 5 =============================`)

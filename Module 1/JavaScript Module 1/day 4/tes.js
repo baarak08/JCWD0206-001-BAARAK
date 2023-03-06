@@ -28,7 +28,7 @@ console.log(`=============================== Segitiga Mine =====================
 
 let angkaSegitiga = 1
 let loopSegitiga = 15
-let loopbreak = 99
+let loopbreak = 105
 for (let i = 0 ; i < loopSegitiga ; i++){
     let sSamakaki= ``;
     
@@ -38,9 +38,9 @@ for (let i = 0 ; i < loopSegitiga ; i++){
     for (let j = 0 ; j <= i ; j++){
     if (angkaSegitiga >= loopbreak + 1){break}
     if (loopbreak.toString().length - angkaSegitiga.toString().length == 2) {
-        sSamakaki += `  `;
+        sSamakaki += `00`;
     } else if (loopbreak.toString().length - angkaSegitiga.toString().length == 1) {
-        sSamakaki += ` `;
+        sSamakaki += `0`;
     } else {
         sSamakaki += ``
     }
@@ -87,7 +87,7 @@ for (let i = 0 ; i < loopSegitiga ; i++){
 console.log(`=============================== Segitiga Bng Jordan ================================`);
 
 
-let n = 99;
+let n = 105 ;
 let tempN = n;
 let digit = '';
 let h = 0;
@@ -146,12 +146,12 @@ console.log(`=============================== Segitiga Siku Terbalik ============
 
 let angka1 = 1
 let h1 = 8
-let angkamax1 = 28
+let angkamax1 = 25
 
 for (let i1 = 1; i1 <= h1; i1++) {
     let a1 = '';
      
-    for (let j1 = h1; j1 > i1; j1--) {
+    for (let j1 = 0; j1 < i1; j1++) {
      if (angka1 >= angkamax1 + 1){
     break
     }     
@@ -169,3 +169,21 @@ for (let i1 = 1; i1 <= h1; i1++) {
 
 }
 console.log(`=============================== End ================================`);
+
+
+// let arr1 = [1,2,3,4,5]
+// let arr2 = [5,4,3,2,1]
+
+// function iAkhir(iA) {
+// for (i = 0 ; i <=iA; i++){
+
+// }
+// }
+// console.log(iAkhir(5));
+
+function test(a,b,c) {
+console.log(a + b + c);
+    
+}
+arr = [10, 9, 8]
+test (...arr)
