@@ -16,11 +16,12 @@ console.log(`======================= No 2 =============================`)
 function NamaDan(arr1) {
 let arr2 = [...arr1];
 let arrDan = arr2.toString();
-let pop = arr2.pop();
-let slice = arrDan.slice(14,21);
+arr2.pop();
+let slice = arrDan.slice(16,23);
 let arrDan2 = arr2 + " dan " + slice;
 
-console.log(`${arr1} menjadi ${arrDan2}`);
+console.log(`${arr1} -> 
+${arrDan2}`);
 }
 
 NamaDan(["Baarak"," Martin"," Mikhael"])
@@ -43,11 +44,25 @@ console.log(hasilArr);
 }
 arrNumbers([5,6,7,8,9],[9,8,7,6,5])
 
+console.log(`=========== cara lain =============`); 
+
+function penjumlahanArray (array1, array2) {
+    let hasil = [];
+    for (i=0; i< array1.length; i++){
+        let jumlah = (array1[i] + array2[i])
+        hasil.push(jumlah)
+    }
+    console.log(hasil);
+    }
+    penjumlahanArray([5,6,7,8,9],[9,8,7,6,5])
+    
+    
+
 console.log(`======================= No 5 =============================`)
 
-let arrWord = ["Muhammad", "Nur", "Ikhsan", "Mubaarak",];
+let arrWord = ["Muhammad", "Nur", "Ikhsan", "Mubaarak"];
 
-function tamabahKata(addArr) {
+function tambahKata(addArr) {
 console.log(`Array awal adalah ${arrWord}`);
 console.log(`Word yang ditambah adalah ${addArr}`);
 
@@ -56,10 +71,10 @@ console.log(`Word yang ditambah adalah ${addArr}`);
     } else {
         console.log("hasilnya adalah SUCCESS");
         arrWord.push(addArr);
-    }
+    }   
 console.log(arrWord);
 }
-tamabahKata("Ganteng")
+tambahKata("Ganteng")
 
 
 console.log(`======================= No 6 =============================`)
@@ -67,15 +82,18 @@ let arrNumber = []
 let arrGanjil = []
 let arrGenap = []
 
-function loopNumber(start,end) {
-    for (i = start; i <= end; i++){
-        if (i % i == 0){arrNumber.push(i)}
+function loopNumber(end) {
+    for (i = 1; i <= end; i++){
+        arrNumber.push(i)
         if (i % 2 == 0){arrGenap.push(i)}
-        if (i % 2 !== 0){arrGanjil.push(i)}
+        else {arrGanjil.push(i)}
+        // (i % 2 !== 0){arrGanjil.push(i)}
     }
     console.log(arrNumber);
     console.log(arrGenap);
     // console.log(arrGanjil);
     }
 
-    loopNumber(1,10)
+    loopNumber(15)
+
+    

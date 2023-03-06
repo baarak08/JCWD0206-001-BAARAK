@@ -58,8 +58,8 @@ let arrNumber = []
 let arrGanjil = []
 let arrGenap = []
 
-function loopNumber(start,end) {
-for (i = start; i <= end; i++){
+function loopNumber(end) {
+for (i = 1; i <= end; i++){
     if (i % i == 0){arrNumber.push(i)}
     if (i % 2 == 0){arrGenap.push(i)}
     if (i % 2 !== 0){arrGanjil.push(i)}
@@ -68,7 +68,8 @@ console.log(arrNumber);
 console.log(arrGenap);
 // console.log(arrGanjil);
 }
-loopNumber(1,10)
+
+loopNumber(10)
 
 console.log(`======================= No 5 =============================`)
 

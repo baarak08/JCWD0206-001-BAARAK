@@ -23,33 +23,33 @@
 //     console.log(a);
 // }
 
-console.log(`=============================== Segitiga Mine ================================`);
+// console.log(`=============================== Segitiga Mine ================================`);
 
 
-let angkaSegitiga = 1
-let loopSegitiga = 15
-let loopbreak = 105
-for (let i = 0 ; i < loopSegitiga ; i++){
-    let sSamakaki= ``;
+// let angkaSegitiga = 1
+// let loopSegitiga = 15
+// let loopbreak = 105
+// for (let i = 0 ; i < loopSegitiga ; i++){
+//     let sSamakaki= ``;
     
-    for (let j = loopSegitiga ; j >= i ; j--){
-    sSamakaki += ` `;
-    }
-    for (let j = 0 ; j <= i ; j++){
-    if (angkaSegitiga >= loopbreak + 1){break}
-    if (loopbreak.toString().length - angkaSegitiga.toString().length == 2) {
-        sSamakaki += `00`;
-    } else if (loopbreak.toString().length - angkaSegitiga.toString().length == 1) {
-        sSamakaki += `0`;
-    } else {
-        sSamakaki += ``
-    }
-    sSamakaki += angkaSegitiga + ` `;
-    angkaSegitiga++
-    }
-    // sSamakaki += `\n`;
-    console.log(sSamakaki);
-}
+//     for (let j = loopSegitiga ; j >= i ; j--){
+//     sSamakaki += ` `;
+//     }
+//     for (let j = 0 ; j <= i ; j++){
+//     if (angkaSegitiga >= loopbreak + 1){break}
+//     if (loopbreak.toString().length - angkaSegitiga.toString().length == 2) {
+//         sSamakaki += `00`;
+//     } else if (loopbreak.toString().length - angkaSegitiga.toString().length == 1) {
+//         sSamakaki += `0`;
+//     } else {
+//         sSamakaki += ``
+//     }
+//     sSamakaki += angkaSegitiga + ` `;
+//     angkaSegitiga++
+//     }
+//     // sSamakaki += `\n`;
+//     console.log(sSamakaki);
+// }
  
 // for (let num = 1; num <= 30; num++) {
 //     if (num % 15 === 0) {
@@ -84,91 +84,91 @@ for (let i = 0 ; i < loopSegitiga ; i++){
 //     }
 
 
-console.log(`=============================== Segitiga Bng Jordan ================================`);
+// console.log(`=============================== Segitiga Bng Jordan ================================`);
 
 
-let n = 105 ;
-let tempN = n;
-let digit = '';
-let h = 0;
-let counter = 1;
+// let n = 105 ;
+// let tempN = n;
+// let digit = '';
+// let h = 0;
+// let counter = 1;
 
-while (true) {
- h++;
- digit += ' ';
- tempN -= counter;
- counter++;
- if (tempN < 1) {
-  break;
- }
-}
-console.log(digit);
+// while (true) {
+//  h++;
+//  digit += ' ';
+//  tempN -= counter;
+//  counter++;
+//  if (tempN < 1) {
+//   break;
+//  }
+// }
+// console.log(digit);
 
-let num = 0;
-let result = '';
+// let num = 0;
+// let result = '';
 
-for (let i = 1; i <= h; i++) {
- let str = '';
- for (let j = 0; j < i && n > num; j++) {
-  num++;
-  if (j == 0) {
-   str = digit.slice(0, Math.ceil(digit.length - i));
-   if (num > 10 && num < 100) str += ` ${num} `;
-   else if (num > 100) str += `${num} `;
-   else str += `   ${num} `;
-  } else {
-   str += `${num} `;
-  }
- }
- str += '\n';
- result += str;
-}
+// for (let i = 1; i <= h; i++) {
+//  let str = '';
+//  for (let j = 0; j < i && n > num; j++) {
+//   num++;
+//   if (j == 0) {
+//    str = digit.slice(0, Math.ceil(digit.length - i));
+//    if (num > 10 && num < 100) str += ` ${num} `;
+//    else if (num > 100) str += `${num} `;
+//    else str += `   ${num} `;
+//   } else {
+//    str += `${num} `;
+//   }
+//  }
+//  str += '\n';
+//  result += str;
+// }
 
-console.log(result);
+// console.log(result);
 
 
-console.log(`=============================== Currency ================================`);
+// console.log(`=============================== Currency ================================`);
 
-let number = 12345
-let currency = ""
-for (let i = 0; i < number.toString().length; i++) {
+// let number = 12345
+// let currency = ""
+// for (let i = 0; i < number.toString().length; i++) {
 
-    if (number.toString().length % 3 == 2) {
-        if (i > 1 && ((number.toString().length - i) % 3 == 0)) currency += "."
-    } 
-    else if (i > 0 && (( number.toString().length - i) % 3) == 0) currency += "."
-    currency += number.toString ().charAt(i) 
+//     if (number.toString().length % 3 == 2) {
+//         if (i > 1 && ((number.toString().length - i) % 3 == 0)) currency += "."
+//     } 
+//     else if (i > 0 && (( number.toString().length - i) % 3) == 0) currency += "."
+//     currency += number.toString ().charAt(i) 
 
-}
-console.log(`Rp ${currency},00`);
+// }
+// console.log(`Rp ${currency},00`);
 
-console.log(`=============================== Segitiga Siku Terbalik ================================`);
+// console.log(`=============================== Segitiga Siku Terbalik ================================`);
 
-let angka1 = 1
-let h1 = 8
-let angkamax1 = 25
+// let angka1 = 1
+// let h1 = 8
+// let angkamax1 = 25
 
-for (let i1 = 1; i1 <= h1; i1++) {
-    let a1 = '';
+// for (let i1 = 1; i1 <= h1; i1++) {
+//     let a1 = '';
      
-    for (let j1 = 0; j1 < i1; j1++) {
-     if (angka1 >= angkamax1 + 1){
-    break
-    }     
-        if (angka1.toString().length < angkamax1.toString().length) {
-            a1 += `0`;
-        } else {
-            a1 += ``
-        }
-    a1 += angka1 + ` `;
-    angka1++      
+//     for (let j1 = 0; j1 < i1; j1++) {
+//      if (angka1 >= angkamax1 + 1){
+//     break
+//     }     
+//         if (angka1.toString().length < angkamax1.toString().length) {
+//             a1 += `0`;
+//         } else {
+//             a1 += ``
+//         }
+//     a1 += angka1 + ` `;
+//     angka1++      
   
-    }
-    //  a1 += '\n';
-    console.log(a1);
+//     }
+//     //  a1 += '\n';
+//     console.log(a1);
 
-}
-console.log(`=============================== End ================================`);
+// }
+// console.log(`=============================== End ================================`);
 
 
 // let arr1 = [1,2,3,4,5]
@@ -181,9 +181,22 @@ console.log(`=============================== End ===============================
 // }
 // console.log(iAkhir(5));
 
-function test(a,b,c) {
-console.log(a + b + c);
-    
+// function test(a,b,c) {
+// console.log(a + b + c);
+// }
+// arr = [10, 9, 8]
+// test (...arr)
+
+function penjumlahanArray (array1, array2) {
+let hasil = [];
+for (i=0; i< array1.length; i++){
+    let jumlah = (array1[i] + array2[i])
+    hasil.push(jumlah)
 }
-arr = [10, 9, 8]
-test (...arr)
+console.log(hasil);
+}
+penjumlahanArray([3,2,1,4,5],[1,4,4,2,6])
+
+arrayL = [1,2,3,4,5,6]
+
+
