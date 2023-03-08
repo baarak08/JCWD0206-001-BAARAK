@@ -187,16 +187,5 @@
 // arr = [10, 9, 8]
 // test (...arr)
 
-function penjumlahanArray (array1, array2) {
-let hasil = [];
-for (i=0; i< array1.length; i++){
-    let jumlah = (array1[i] + array2[i])
-    hasil.push(jumlah)
-}
-console.log(hasil);
-}
-penjumlahanArray([3,2,1,4,5],[1,4,4,2,6])
-
-arrayL = [1,2,3,4,5,6]
 
 
