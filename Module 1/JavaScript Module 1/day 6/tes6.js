@@ -81,38 +81,38 @@
 
 
 
-const Student = class {
-    constructor(name, email, birthdate, score) {
-     this.name = name;
-     this.email = email;
-     this.birthdate = new Date(birthdate);
-     this.score = score;
+// const Student = class {
+//     constructor(name, email, birthdate, score) {
+//      this.name = name;
+//      this.email = email;
+//      this.birthdate = new Date(birthdate);
+//      this.score = score;
    
-     this.age = Math.floor(
-      (new Date() - new Date(birthdate)) / (1000 * 60 * 60 * 24 * 365)
-     );
-    }
-   };
+//      this.age = Math.floor(
+//       (new Date() - new Date(birthdate)) / (1000 * 60 * 60 * 24 * 365)
+//      );
+//     }
+//    };
    
-   const HLA = class {
-    constructor(Highest, Lowest, Average) {
-     this.Highest = Highest;
-     this.Lowest = Lowest;
-     this.Average = Average;
-    }
-   };
+//    const HLA = class {
+//     constructor(Highest, Lowest, Average) {
+//      this.Highest = Highest;
+//      this.Lowest = Lowest;
+//      this.Average = Average;
+//     }
+//    };
    
-   let udin = new Student('udin', 'udin@mail.com', '1996/01/21', 100);
-   let ujang = new Student('ujang', 'ujang@mail.com', '1999/05/21', 20);
-   let richard = new Student('richard', 'r@mail.com', '1998/03/21', 90);
+//    let udin = new Student('udin', 'udin@mail.com', '1996/01/21', 100);
+//    let ujang = new Student('ujang', 'ujang@mail.com', '1999/05/21', 20);
+//    let richard = new Student('richard', 'r@mail.com', '1998/03/21', 90);
    
-   const students = [udin, ujang, richard];
-   console.log(students);
-   const calculate = (students = []) => {
-    const findMin = (arr = [], type = 'age') =>
-     arr.reduce((min, value) => {
-      return value[type] < min[type] ? value : min;
-     })[type];
+//    const students = [udin, ujang, richard];
+//    console.log(students);
+//    const calculate = (students = []) => {
+//     const findMin = (arr = [], type = 'age') =>
+//      arr.reduce((min, value) => {
+//       return value[type] < min[type] ? value : min;
+//      })[type];
    
     //students [{udin}, {ujang}, {richard}]
     // udin age = 27 , ujang  =23 , richard = 24
@@ -129,17 +129,17 @@ const Student = class {
     //arr.reduce = object ujang
     //return findMin ujang.age
    
-    const findMax = (arr = [], type = '') =>
-     arr.reduce((min, value) => {
-      return value[type] > min[type] ? value : min;
-     })[type];
+    // const findMax = (arr = [], type = '') =>
+    //  arr.reduce((min, value) => {
+    //   return value[type] > min[type] ? value : min;
+    //  })[type];
    
-    const findAvg = (arr = [], type = '') =>
-     (
-      arr.reduce((avg, value, idx) => {
-       return idx == 1 ? avg[type] + value[type] : avg + value[type];
-      }) / arr.length
-     ).toFixed(2);
+    // const findAvg = (arr = [], type = '') =>
+    //  (
+    //   arr.reduce((avg, value, idx) => {
+    //    return idx == 1 ? avg[type] + value[type] : avg + value[type];
+    //   }) / arr.length
+    //  ).toFixed(2);
    
     //students [{udin}, {ujang}, {richard}]
     // udin age = 27 , ujang  =23 , richard = 24
@@ -153,23 +153,101 @@ const Student = class {
     // 50 + 24 = 74
     // return 74/3 = 24.67
    
-    let Score = new HLA(
-     findMax(students, 'score'),
-     findMin(students, 'score'),
-     findAvg(students, 'score')
-    );
+//     let Score = new HLA(
+//      findMax(students, 'score'),
+//      findMin(students, 'score'),
+//      findAvg(students, 'score')
+//     );
    
-    let Age = new HLA(
-     findMax(students, 'age'),
-     findMin(students, 'age'),
-     findAvg(students, 'age')
-    );
-    return { Score: { ...Score }, Age: { ...Age } };
-   };
+//     let Age = new HLA(
+//      findMax(students, 'age'),
+//      findMin(students, 'age'),
+//      findAvg(students, 'age')
+//     );
+//     return { Score: { ...Score }, Age: { ...Age } };
+//    };
    
-   console.log(calculate(students));
+//    console.log(calculate(students));
    
    // let date = new Date('1996/01/21');
    // let currDate = new Date();
 
 //    console.log(udin.age);
+
+class Produk {
+    constructor (Nama, Harga){
+    this.Nama = Nama;
+    this.Harga = Harga
+
+    }
+}
+class Transaksi {
+    constructor (){
+    this.Total = 0;
+    this.Produk = {}
+
+}
+}
+
+let beliCoklat1 = new Transaksi(`Chocolatoz`,`1000`)
+let beliCoklat2 = new Transaksi(`Hanzel`, `2000`)
+let beliCoklat3 = new Transaksi(`Bueno`,`7000`)
+
+
+let totalTransaksi = [beliCoklat1,beliCoklat2,beliCoklat3]
+console.log(totalTransaksi);
+
+function addToChart(Produk, Qty) {
+    this.produk[Produk.nama] = Qty;
+    this.total += (Produk.harga * Qty);
+  }
+  
+  function showTransaksi() {
+    return this.Total;
+  }
+  
+  function checkout() {
+    return {
+      total: this.Total,
+      produk: this.Produk
+    };
+  }
+
+let transaksi = new Transaksi();
+transaksi.addToChart(beliCoklat1, 2);
+transaksi.addToChart(beliCoklat2, 2);
+transaksi.addToChart(beliCoklat3, 3);
+
+// Total
+console.log("Total Transaksi:", transaksi.showTransaksi());
+  
+  // Checkout
+  console.log("Data Transaksi:", transaksi1.checkout());
+
+
+
+
+  console.log(`=================================================`);
+
+
+    // function penjumlahanArray (array1, array2) {
+    //     let hasil = [];
+    //     for (i=0; i< array1.length; i++){
+    //         if (array1[i] == array2[i]){
+
+    //         }
+
+    //     }
+    //     console.log(hasil);
+    //     }
+    //     penjumlahanArray([
+    //         { name: `Student 1`, email : `student1@mail.com` }, 
+    //         { name: `Student 2`, email : `student2@mail.com` }
+    //         ]
+    //         , [
+    //             { name: `Student 1`, email : `student1@mail.com` }, 
+    //             { name: `Student 3`, email : `student3@mail.com` }
+    //             ]
+    //             )
+        
+        
