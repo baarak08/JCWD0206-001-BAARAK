@@ -12,34 +12,3 @@ function selectionSort(arr) {
   return arr;
 }
 console.log(selectionSort([29, 72, 98, 13, 87, 66, 52, 51, 36]));
-
-console.log(`=================== nomer 1 =====================`);
-
-let aplhaStr = `abcdefghijklmnopqrstuvwxyz`;
-let alphaArr = aplhaStr.toUpperCase().split(``);
-let alphaMix = [];
-// console.log(alphaArr);
-for (let i = 0; i < alphaArr.length; i++) {
-  let plusArr = alphaArr[0] + alphaArr[i];
-  alphaMix.push(plusArr);
-}
-let arrMix = (alphaArr + `,` + alphaMix).split(`,`);
-// console.log(arrMix);
-
-function cariHuruf(huruf) {
-  for (let j = 0; j < arrMix.length; j++) {
-    if (arrMix[j] == huruf) {
-      console.log(`${arrMix[j]} -> ${j + 1}`);
-    }
-  }
-}
-cariHuruf(`H`);
-
-
-
-
-
-
-
-
-

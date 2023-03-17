@@ -55,6 +55,8 @@ function urutan(huruf) {
   let cari2 = arr1.indexOf(huruf.charAt(1));
   let cari3 = arr1.indexOf(huruf.charAt(2));
 
+  console.log(arr1.indexOf(`Z`));
+
   switch (huruf.length) {
     case 1:
       console.log(arr1.indexOf(huruf));
@@ -67,7 +69,7 @@ function urutan(huruf) {
       break;
   }
 }
-urutan(`ZZZ`)
+urutan(`ABC`)
 
 
 
@@ -75,10 +77,10 @@ urutan(`ZZZ`)
 
 console.log(`=================== nomer 2 =====================`);
 
-let arrAwal = [2, 2, 2, 2, 1, 4, 5, 4, 6, 6, 7]
+let arrAwal = [2, 1, 4, 5, 5, 4, 6, 7, 7, 7]
 let arrUrut = []
 for (let i = 0; i < arrAwal.length; i++) {
-  let cek = arrAwal.filter((val) => val == arrAwal[i])
+  let cek = arrAwal.sort().filter((val) => val == arrAwal[i])
   if (cek.length < 2) { arrUrut.push(...cek) }
 }
 
@@ -91,7 +93,7 @@ console.log(`============= cara lain ==============`);
 let urutAwal = arrAwal.sort()
 let arrUrut1 = []
 for (let z = 0; z < urutAwal.length; z++)
-  if (urutAwal[z] !== urutAwal[z + 1]) {
+  if (urutAwal[z] == urutAwal[z + 1]) {
     arrUrut1.push(urutAwal[z])
   }
 console.log(arrUrut1);
@@ -116,23 +118,12 @@ console.log(`=================== nomer 4 =====================`);
 let a = 0;
 let b = 1;
 let prob = a + b;
-let tangga = 10;
+let tangga = 6;
 
-for (let i = 1; i <= tangga; i++) {
+for (let i = 0; i < tangga; i++) {
   // console.log(prob);
   prob = a + b;
   a = b;
   b = prob;
 }
 console.log(prob);
-
-
-
-// console.log(`======================================`);
-
-// let arr = [10, 11, 11, 12, 13];
-// console.log(arr);
-
-// console.log(arr.findIndex((val, index) => val == 11)); //if true return index
-// console.log(arr.find((val) => val == 11 || val == 12)); //if true return value
-// console.log(arr.filter((val) => val == 11 || val == 12)); //if true return array[value]
