@@ -13,15 +13,13 @@ async function antrian() {
     prosesAntri(urutan, namanya) // set value dari objek pake callback lempar ke func prosesAntri
 }
 async function prosesAntri(urutan, namanya) {
+
     for (let j = 0; j < daftarAntri.length; j++) {
         const lamaWaktu = Math.floor((Math.random() * 10) + 1) * 1000; // set random
         console.log(`Memproses antrian ${urutan[j]} dengan nama ${namanya[j]} selama ${lamaWaktu / 1000} detik`);
         await new Promise(resolve => setTimeout(resolve, lamaWaktu)); // set waktu
         console.log(`Antrian ${urutan[j]} telah selesai`);
-
     }
 }
 antrian()
-
-
 
