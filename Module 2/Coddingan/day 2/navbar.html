@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NavBar</title>
+    <style>
+      .content {
+        display: flex;
+        width: 130px;
+        justify-content: space-between;
+      }
+      .navbar {
+        display: flex;
+        padding: 10px;
+        background-color: green;
+        justify-content: space-between;
+      }
+      .judul {
+        color: white;
+        font-weight: 700px;
+        font-size: larger;
+        font-family: sans-serif;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+      }
+      .button {
+        color: white;
+        border: 1px solid white;
+        padding-left: 3px;
+        padding-right: 3px;
+        padding: 3px;
+        font-family: sans-serif;
+        color: green;
+        border-radius: 5px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        background-color: aliceblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="judul"><b>TOKO BAJU</b></div>
+      <div>
+        <select style="height: 100%" name="tipe">
+          <option value="Mevah">Mevah</option>
+          <option value="Murah">Murah</option>
+        </select>
+        <input style="min-width: 1000px; height: 30px" type="text" />
+      </div>
+
+      <div class="content">
+        <div class="button"><b>Register</b></div>
+        <div class="button"><b>Login</b></div>
+      </div>
+    </div>
+  </body>
+</html>

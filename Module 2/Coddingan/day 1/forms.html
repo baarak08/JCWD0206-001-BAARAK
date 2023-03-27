@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forms</title>
+  </head>
+  <body>
+    <h1>Formulir</h1>
+    <form action="" method="post" id="frmRgstr">
+      <fieldset>
+        <legend>Register:</legend>
+        <table>
+          <tr>
+            <th>Nama</th>
+            <td><input type="text" name="input" id="txtNama" /></td>
+          </tr>
+          <tr>
+            <th>Email</th>
+            <td><input type="text" name="input" id="txtEmail" /></td>
+          </tr>
+          <tr>
+            <th>Password</th>
+            <td><input type="password" name="input" id="txtPassword" /></td>
+          </tr>
+          <tr>
+            <th>Qualify</th>
+            <td>
+              Front-End <input type="checkbox" name="cb" id="cbFE" /> Back-End
+              <input type="checkbox" name="cb" id="cbBE" />
+            </td>
+          </tr>
+          <tr>
+            <th>Gender</th>
+            <td>
+              Pria <input type="radio" name="radio" id="rdPria" /> Wanita
+              <input type="radio" name="radio" id="rdWanita" />
+            </td>
+          </tr>
+          <tr>
+            <th>Umur</th>
+            <td><input type="number" name="input" id="txtUmur" /></td>
+          </tr>
+          <tr>
+            <th>Alamat</th>
+            <td>
+              <textarea
+                name="input"
+                id="txtAlamat"
+                cols="20"
+                rows="5"
+              ></textarea>
+            </td>
+          </tr>
+          <tr>
+            <th>Agama</th>
+            <td>
+              <select name="select" id="slcAgama">
+                <option selected value="1">Islam</option>
+                <option value="2">Kristen</option>
+                <option value="3">Hindu</option>
+                <option value="4">Budha</option>
+              </select>
+            </td>
+          </tr>
+
+          <tr>
+            <td colspan="2">
+              <center>
+                <!-- <input type="submit" value="submit" id="btnSubmit" /> -->
+                <input type="button" value="ok" onclick="ok()" />
+              </center>
+            </td>
+          </tr>
+        </table>
+      </fieldset>
+    </form>
+  </body>
+  <script>
+    function ok() {
+      let nama = document.getElementById("txtNama").value;
+      alert(`Terimakasih ${nama}, data anda sudah tersimpan!`);
+    }
+  </script>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body></body>
+  <script>
+    class Produk {
+      constructor(makanan, stock, harga, index) {
+        this.makanan = makanan;
+        this.stock = stock;
+        this.harga = harga;
+        this.index = index;
+      }
+    }
+
+    let arrMakanan = [
+      new Produk(`Surabi`, 10, 4000),
+      new Produk(`Risol`, 10, 2000),
+      new Produk(`Nasi Goreng`, 10, 15000),
+      new Produk(`Es Buah`, 10, 8000),
+      new Produk(`Es Teh Manis`, 10, 5000),
+    ];
+    console.log(arrMakanan);
+
+    let tampilanBelanja = `\n` + `Berikut pilihan menu takjil hari ini!` + `\n`;
+    arrMakanan.map((val, index) => {
+      tampilanBelanja +=
+        index +
+        1 +
+        ". " +
+        val.makanan +
+        ", jumlah tersedia " +
+        val.stock +
+        ", harga saatuan: Rp." +
+        val.harga.toLocaleString(`id-ID`) +
+        ",-" +
+        "\n";
+    });
+    tampilanBelanja +=
+      `\n` +
+      `Silahkan input nomer, sesuai dengan pilihan menu makanan/minuman yang anda inginkan:`;
+
+    class Keranjang extends Produk {
+      constructor(makanan, stock, harga, jumlah) {
+        super(makanan, stock, harga);
+        this.jumlah = jumlah;
+      }
+    }
+
+    let keranjang = [];
+
+    alert(`Hallo, Akhi dan Ukhti!`);
+
+    let home = 0;
+    while (home != 3) {
+      home = parseInt(
+        prompt(`
+    Selamat datang di Toko Ramadhan
+
+    1. Etalase Menu Takjil
+    2. Keranjang Kamu
+    3. Exit
+
+    `)
+      );
+      if (home == 1) {
+        let inputKeranjang = parseInt(prompt(tampilanBelanja));
+        if (inputKeranjang > 0 && inputKeranjang < arrMakanan.length + 1) {
+          let pilihan = arrMakanan[inputKeranjang - 1];
+          let jumlah = parseInt(
+            prompt(
+              arrMakanan[inputKeranjang - 1].makanan +
+                `, stok yang tersedia ` +
+                arrMakanan[inputKeranjang - 1].stock +
+                `, harga satuan Rp.` +
+                arrMakanan[inputKeranjang - 1].harga.toLocaleString(`id-ID`) +
+                `,- \n` +
+                `\n` +
+                `Mau beli berapa banyak?`
+            )
+          );
+          console.log(jumlah);
+          if (jumlah > pilihan.stock || jumlah < 0) {
+            alert(`input yang anda masukan tidak benar`);
+          } else {
+            keranjang.push(
+              new Keranjang(pilihan.makanan, 0, pilihan.harga, jumlah)
+            );
+          }
+        }
+      } else if (home == 2) {
+        if (keranjang.length > 0) {
+          let tampilanKeranjang = `Ini keranjang kamu:\n`;
+          keranjang.map((val, index) => {
+            tampilanKeranjang +=
+              index +
+              1 +
+              ". " +
+              val.makanan +
+              ", harga satuan: Rp." +
+              val.harga.toLocaleString(`id-ID`) +
+              ",-" +
+              " | Jumlah dibeli " +
+              val.jumlah +
+              ", total harga: Rp." +
+              (val.harga * val.jumlah).toLocaleString(`id-ID`) +
+              ",-" +
+              "\n";
+          });
+
+          tampilanKeranjang +=
+            `\n` +
+            `Masukan nomor makanan yang ingin kamu edit\n` +
+            `Ketik "checkout" untuk melanjutkan ke pembayaran`;
+          let aksi = prompt(tampilanKeranjang);
+
+          if (aksi == 1) {
+            let total = 0;
+            let hitung = keranjang.map(function (val) {
+              val.harga * val.jumlah;
+              total += hitung;
+            });
+            let bayar = prompt(total);
+          } else if (aksi > 0) {
+          } else {
+            `input yang anda masukan tidak benar`;
+          }
+        } else {
+          alert(`Keranjang kamu belum terisi!`);
+        }
+      } else if (home == 3) {
+        alert(`Semoga ibadah kita di bulan suci Ramadhan ini diterima ya!`);
+        break;
+      } else {
+        alert(`Maaf input yang anda pilih salah`);
+      }
+    }
+  </script>
+</html>

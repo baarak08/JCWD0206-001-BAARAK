@@ -1,61 +1,124 @@
-<!-- 
-1. belanja
-2. keranjang
-3. exit
-
-Page 1
-1. Kemeja Pria Stock 10 Rp.@120.000
-2. Celana Jeans Pria Stock 5 @200.000
-3. Sepatu Air Jordan High Stock 3 @2.000.000
-4. Sepatu Yeezy Stock 5 @4.000.000
-
-options :
-1-4. add to cart
-0. Home
-
-
-add to cart => qty ? tidak boleh melebihi stock/0 => back to belanja
-
-
-Keranjang
-shows items
-options :
-1. checkout => input pembayaran(total harga - pembayaran) => munculkan struk pembelian dengan tanggal beli , seluruh
-item, qty , harga satuan , dan total harga
-2. delete => delete item => 1-8 nomor barang
-3. edit qty => edit qty item tidak boleh melebihi stock/0
-4. back
- -->
-
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Exercise</title>
 </head>
 
-<body>
-</body>
+<body></body>
 <script>
-    let greet = `Halloo!`
-    alert(greet)
-    let menu = 0
+    class Keranjang {
+        constructor(produk, qty, harga) {
+            this.produk = produk;
+            this.qty = qty;
+            this.harga = harga;
+        }
+    }
+
+    let belanja = [
+        { produk: 'Kemeja Pria', stock: 10, harga: 120000 },
+        { produk: 'Celana Jeans Pria', stock: 5, harga: 200000 },
+        { produk: 'Kaos Polos', stock: 5, harga: 75000 }
+    ];
+
+    let tampilanBelanja = '';
+
+    belanja.forEach((val, index) => {
+        tampilanBelanja +=
+            index +
+            1 +
+            '. ' +
+            val.produk +
+            ' Stock ' +
+            val.stock +
+            ' Rp.@' +
+            val.harga.toLocaleString('id-ID') +
+            '\n';
+    });
+    console.log(tampilanBelanja);
+
+    let keranjang = [];
+    let menu = 0;
+
     while (menu != 3) {
         menu = prompt(`
-    1. Menu
-    2. Keranjang
-    3. Exit
-    `)
+1. menu
+2. keranjang
+3. exit`);
 
-        if (menu == `1`) {
-        } else if (menu == `2`) {
-        } else if (menu == `3`) {
-            alert`Berkunjung Lagi Yaa! :)`
-        } else { `pilihan yang kamu input belum tidak ada` }
+
+        if (menu == '1') {
+            let opt = parseInt(prompt(tampilanBelanja));
+            if (opt > 0 && opt < tampilanBelanja.length) {
+                let item = belanja[opt - 1];
+                let qty = parseInt(prompt('Mau beli berapa banyak?'));
+                console.log(item);
+                qty > item.stock || qty < 0
+                    ? alert('input tidak tepat')
+                    : keranjang.push(new Keranjang(item.produk, qty, item.harga));
+            }
+        } else if (menu == 2) {
+            barang = [];
+            for (let i = 0; i < keranjang.length; i++) {
+                barang = barang + (i + 1) + ". " + keranjang[i].produk + " Quantity " + keranjang[i].qty + " Harga " + keranjang[i].harga + " Total Harga " + keranjang[i].harga * keranjang[i].qty + "\n";
+            }
+            menu = confirm(barang);
+            let opsiKerangjang = prompt(`
+      1. Check Out
+      2. Edit
+      3. Back
+      `)
+            if (opsiKerangjang == 1) {
+                let sum = keranjang.reduce((a, b) => {
+                    b = b.qty * b.harga
+                    return (a += b)
+                }, 0);
+                let pembayaran = prompt(`Lakukan pembayaran sejumlah Rp.${sum.toLocaleString('id-ID')},00`)
+                if (pembayaran == sum) {
+                    confirm(`Terimakasi sudah melakukan pembayaran`)
+                    keranjang = []
+                } else if (pembayaran < sum) {
+                    let kurangnya = sum - pembayaran
+                    let kurang = prompt(`Pembayaran anda kurang Rp.${kurangnya.toLocaleString(`id-ID`)},00`)
+                    if (kurang == kurangnya) {
+                        confirm(`Terimakasi sudah melakukan pembayaran`)
+                    } else if (kurang < kurangnya) {
+                        let kurangnya = sum - pembayaran
+                        let kurang = prompt(`Pembayaran anda kurang Rp.${kurangnya.toLocaleString(`id-ID`)},00`)
+                    } else if (kurang > kurangnya) {
+                        let lebihnya = pembayaran - sum
+                        confirm(`Pembayaran anda lebih Rp.${lebihnya.toLocaleString(`id-ID`)},00 akan dikembalikan ke akun anda`)
+                        keranjang = []
+                    }
+                } else if (pembayaran > sum) {
+                    let lebihnya = pembayaran - sum
+                    confirm(`Pembayaran anda lebih Rp.${lebihnya.toLocaleString(`id-ID`)},00 akan dikembalikan ke akun anda`)
+                    keranjang = []
+                }
+            } else if (opsiKerangjang == 2) {
+                let input = parseInt(prompt(`${barang}
+        input nomer barang untuk mengedit`))
+                input
+            }
+        }
+        else if (menu == 3) {
+            alert('terima kasih sudah berkunjung');
+        } else {
+            alert('menu belum dibuat');
+        }
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -64,6 +127,10 @@ item, qty , harga satuan , dan total harga
 
 
     }
+
+
+
+
 </script>
 
 </html>
